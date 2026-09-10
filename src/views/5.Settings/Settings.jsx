@@ -234,7 +234,7 @@ const Settings = () => {
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <p className="text-sm text-semantic-text-secondary">App version</p>
-              <p className="text-sm font-medium">{APP_INFO?.version && APP_INFO.version !== '0.0.0' ? `v${APP_INFO.version}` : 'UMI School Portal'}</p>
+              <p className="text-sm font-medium">{APP_INFO?.version && APP_INFO.version !== '0.0.0' ? `v${APP_INFO.version}` : 'DRIMS School Portal'}</p>
             </div>
             <div className="flex items-center justify-between">
               <p className="text-sm text-semantic-text-secondary">Build date</p>

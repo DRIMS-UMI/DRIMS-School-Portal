@@ -1,9 +1,13 @@
 import path from "path"
+import crypto from "crypto"
+import fs from "fs"
 import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import { VitePWA } from 'vite-plugin-pwa'
 import pkg from './package.json'
+
+const iconHash = crypto.createHash('md5').update(fs.readFileSync('public/pwa-512x512.png')).digest('hex').slice(0, 8)
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -18,9 +22,9 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'safari-pinned-tab.svg'],
       manifest: {
-        name: 'UMI School Portal',
-        short_name: 'UMI Faculty',
-        description: 'UMI DRIMS - School Portal',
+        name: 'DRIMS School Portal',
+        short_name: 'DRIMS School',
+        description: 'DRIMS - School Portal',
         theme_color: '#7c3aed',
         background_color: '#ffffff',
         display: 'standalone',
@@ -29,25 +33,25 @@ export default defineConfig({
         start_url: '/',
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: `pwa-192x192.png?v=${iconHash}`,
             sizes: '192x192',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'pwa-192x192.png',
+            src: `pwa-192x192.png?v=${iconHash}`,
             sizes: '192x192',
             type: 'image/png',
             purpose: 'maskable'
           },
           {
-            src: 'pwa-512x512.png',
+            src: `pwa-512x512.png?v=${iconHash}`,
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any'
           },
           {
-            src: 'pwa-512x512.png',
+            src: `pwa-512x512.png?v=${iconHash}`,
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable'
@@ -79,7 +83,8 @@ export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify({
       version: pkg.version,
-      build: new Date().toISOString()
+      build: new Date().toISOString(),
+      iconVersion: iconHash
     })
   },
   assetsInclude: ['**/*.docx'],

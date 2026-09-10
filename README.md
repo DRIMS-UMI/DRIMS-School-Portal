@@ -1,5 +1,5 @@
 
-# UMI School Portal
+# DRIMS School Portal
 
 A Progressive Web App (PWA) for the University Management Information System school portal, enabling faculty members to manage students, grades, and administrative tasks.
 

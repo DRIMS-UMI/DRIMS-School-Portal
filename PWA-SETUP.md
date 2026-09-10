@@ -1,7 +1,7 @@
-# UMI School Portal - Progressive Web App (PWA) Setup
+# DRIMS School Portal - Progressive Web App (PWA) Setup
 
 ## Overview
-The UMI School Portal has been converted to a Progressive Web App (PWA), enabling users to install it on their desktop and mobile devices for a native app-like experience.
+The DRIMS School Portal has been converted to a Progressive Web App (PWA), enabling users to install it on their desktop and mobile devices for a native app-like experience.
 
 ## Features
 - **Installable**: Can be installed on desktop and mobile devices
@@ -14,7 +14,7 @@ The UMI School Portal has been converted to a Progressive Web App (PWA), enablin
 ## Installation
 
 ### Desktop (Chrome, Edge, Safari)
-1. Open the UMI School Portal in your browser
+1. Open the DRIMS School Portal in your browser
 2. Look for the install prompt or click the install icon in the address bar
 3. Click "Install" when prompted
 4. The app will be installed and can be launched from your desktop
@@ -90,7 +90,7 @@ The build process generates:
 
 ## Faculty-Specific Features
 - Purple theme color (#7c3aed) for faculty branding
-- "UMI School Portal" app name and short name
+- "DRIMS School Portal" app name and short name
 - Faculty-specific icon and splash screens
 - Optimized for faculty workflow and document management
 
