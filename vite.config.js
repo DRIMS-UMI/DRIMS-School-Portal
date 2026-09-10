@@ -25,6 +25,7 @@ export default defineConfig({
         name: 'DRIMS School Portal',
         short_name: 'DRIMS School',
         description: 'DRIMS - School Portal',
+        id: '/school/',
         theme_color: '#7c3aed',
         background_color: '#ffffff',
         display: 'standalone',
@@ -59,6 +60,7 @@ export default defineConfig({
         ]
       },
       workbox: {
+        clientsClaim: true,
         globPatterns: ['**/*.{js,css,html,ico,png,svg,docx}'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5MB limit for docx files
         runtimeCaching: [
