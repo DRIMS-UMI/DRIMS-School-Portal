@@ -89,7 +89,7 @@ const FacultyTable = ({
       {
         accessorKey: 'schoolCode',
         header: () => <span className="text-sm">School Code</span>,
-        cell: info => <div className="text-sm flex flex-row text-center items-center gap-1 justify-start"> <span>{info.row.original.school.code}</span>   <TooltipProvider>
+        cell: info => <div className="text-sm flex flex-row text-center items-center gap-1 justify-start"> <span>{info.row.original.school?.code}</span>   <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
             <Icon
@@ -97,7 +97,7 @@ const FacultyTable = ({
               className="w-4 h-4 mt-1 text-gray-400"
             />
           </TooltipTrigger>
-          <TooltipContent>{info.row.original.school.name}</TooltipContent>
+          <TooltipContent>{info.row.original.school?.name}</TooltipContent>
         </Tooltip>
       </TooltipProvider></div>
       },
@@ -116,7 +116,7 @@ const FacultyTable = ({
         header: () => <span className="text-sm">Campus</span>,
         cell: info => (
           <div className="inline-flex rounded-md py-[4px] px-[9px]  items-center justify-center whitespace-nowrap text-sm capitalize">
-            {info.row.original.campus.name}
+            {info.row.original.campus?.name}
           </div>
         )
       },
