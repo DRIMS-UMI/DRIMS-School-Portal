@@ -35,15 +35,19 @@ import ChangeSupervisor from "./views/2.StudentManagement/ChangeSupervisor";
 import PWAInstaller from "./components/PWAInstaller";
 import PWAUpdateToast from "./components/PWAUpdateToast";
 import SupportChatWidget from "./components/SupportChatWidget";
+import { WhatsNewProvider } from "./components/WhatsNew";
 // import ResetPassword from "./views/0.Auth/ResetPassword";
 
 function App() {
   return (
-    <>
-      <PWAInstaller />
-      <PWAUpdateToast />
+    <WhatsNewProvider>
       <AuthContextProvider>
         <Router>
+          {/* PWAInstaller and PWAUpdateToast must sit inside the Router: the update
+              toast reads the current path via useLocation to re-assert itself after
+              a dismissal, which throws outside of router context. */}
+          <PWAInstaller />
+          <PWAUpdateToast />
           <Routes>
             <Route
               path="/"
@@ -119,7 +123,7 @@ function App() {
         </Router>
         <SupportChatWidget />
       </AuthContextProvider>
-    </>
+    </WhatsNewProvider>
   );
 }
 
